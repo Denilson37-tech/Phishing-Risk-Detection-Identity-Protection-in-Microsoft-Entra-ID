@@ -1,54 +1,104 @@
- Phishing-Risk-Detection-Identity-Protection-in-Microsoft-Entra-ID
-A junior cloud security project demonstrating detection and mitigation of phishing-related identity risks using Microsoft Entra ID and Azure monitoring tools.Focuses on early threat detection, investigation, and preventive response, without creating phishing attacks.
-Background: Abuja Fraud Case
+Improving Identity Secure Score in Microsoft Entra ID
 
-In 2024, a small consulting firm in Abuja experienced an attempted credential theft. An employee received a convincing email and entered credentials on a fake login page. Within hours, unusual sign-ins from an unfamiliar location and failed MFA challenges were detected. Quick review and response prevented further compromise.
+Overview
 
-Lesson: Phishing is an identity security problem, not just an email problem.
-Objective
+This project demonstrates practical steps to improve an organization’s identity secure score within Microsoft Entra ID (Azure Active Directory).
 
-Enable security teams to detect phishing-related risks in cloud identities, respond quickly, and improve overall identity security posture using log analysis and Azure-native tools.
-Solution Overview
+The focus is on applying security best practices, configuring policies, and leveraging automation to enhance identity and access management (IAM) posture.
 
-Tools & Services Used:
+Problem Statement
 
-Microsoft Entra ID Sign-in & Audit Logs
+Many organizations lack visibility and control over identity security. Low secure scores indicate vulnerabilities,
 
-Azure Monitor & Log Analytics Workspace
+including: Weak or missing multi-factor authentication (MFA) enforcement
+Overprivileged accounts or poor role-based access control (RBAC)
+Unmonitored risky sign-ins or inactive accounts
 
-Kusto Query Language (KQL)
+This project addresses these challenges by implementing targeted improvements in Microsoft Entra ID to increase the secure score and reduce identity-related risks.
 
-Role-Based Access Control (RBAC)
+Architecture & Design
 
-Detection Approach:
+The solution leverages Microsoft Entra ID capabilities and automation for consistent security improvements.
 
-Multiple failed sign-ins followed by success
+Key components:
 
-Sign-ins from unusual locations
+Component
 
-Abnormal MFA challenge patterns
+Purpose
 
-Sudden changes in authentication behavior.
-Response Actions:
+Multi-Factor Authentication
+Enforce MFA for all users to prevent credential compromise
 
-Force password reset for compromised accounts
+Conditional Access Policies
 
-Revoke active sessions
+Apply security rules based on user risk, location, and device
+Role-Based Access Control
+Assign least-privilege roles to users and groups
+Risk Monitoring & Alerts
 
-Enforce or strengthen MFA
+Track risky sign-ins and remediate high-risk accounts
+Secure Score Reporting
+Measure and document improvements over time
 
-Adjust Conditional Access policies
+High-level workflow:
 
-Educate users on phishing awareness
-Outcome
+Identify low-scoring security areas using Microsoft Entra ID secure score.
+Implement corrective actions such as MFA enforcement and policy adjustments.
+Monitor secure score metrics and iterate improvements.
 
-Suspicious activity detection and alerting via Entra ID logs
+Automate reporting for continuous compliance and auditing.
 
-Reduced risk of credential compromise
+Implementation Steps
+Assess Current Secure Score
+Access the Secure Score dashboard in the Microsoft Entra ID portal.
 
-Improved cloud security visibility and readiness
+Identify top improvement opportunities.
+Enable MFA for Users
+Configure user and group-based MFA policies.
+Example PowerShell command to enforce MFA:
 
-Demonstrated ability to translate log data into actionable security decisions
+Implement Conditional Acces
 
+Create policies for high-risk users and risky sign-ins.
+Example: Block sign-ins from unfamiliar locations until MFA is completed.
 
-Sample KQL queries are included in /kql-queries.
+Optimize RBAC
+Review all administrative roles and assign least privilege.
+Remove inactive or redundant accounts.
+Monitor & Remediate Risks
+
+Track risky users and sign-ins using PowerShell or portal dashboards.
+Document changes and improvements in secure score.
+Security Controls Applied
+Enforced MFA for all accounts with high impact.
+
+Configured Conditional Access Policies to mitigate risky sign-ins.
+Applied least-privilege RBAC for administrative users.
+
+Automated risk monitoring via PowerShell for scalable remediation.
+Tracked improvements in Microsoft Entra ID secure score over time.
+
+Outcomes / Impact
+
+Increased Microsoft Entra ID secure score by implementing prioritized controls.
+Reduced organizational exposure to compromised credentials and risky sign-ins.
+Established a repeatable process for identity security improvement.
+Provided audit-ready documentation of secure configuration changes.
+
+Lessons Learned
+
+Prioritizing high-impact controls accelerates secure score improvement.
+Continuous monitoring is essential to maintain a secure identity environment.
+Automation via PowerShell or scripts ensures consistent policy application and auditability.
+
+Next Steps / Recommendations
+
+Integrate with Microsoft Sentinel for real-time alerting and correlation.
+Extend secure score improvement to external identities and guest users.
+Implement ongoing reporting dashboards for management visibility.
+
+References
+
+Microsoft Entra ID Secure Score Documentation
+Microsoft Entra Conditional Access
+PowerShell for Entra ID
